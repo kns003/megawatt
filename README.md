@@ -13,3 +13,5 @@
          `http://127.0.0.0.1:8000/sites/summary/?type=python` => this will calculate the Sum based using built in python functions.
          
  9. Similar thing works for Average as well.
+ 
+ 10. You can view this from my personal heroku hosted website : https://shashank-megawatt.herokuapp.com/ (Login credentials in the email)
