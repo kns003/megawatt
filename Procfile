@@ -1,1 +1,1 @@
-web: python manage.py 0.0.0.0:$PORT
+web: gunicorn megawatt.wsgi --log-file -
