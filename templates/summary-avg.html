@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<h1>Summary</h1>
+  <a href="{% url 'summary' %}"><button type="button" {% if request.resolver_match.url_name == "summary" %}
+                                                        class="btn btn-primary active"
+                                                      {% else %}
+                                                        class="btn btn-primary"
+                                                        {% endif %}>Sum</button></a>
+  <a href="{% url 'summary_average' %}"><button type="button" {% if request.resolver_match.url_name == "summary_average" %}
+                                                        class="btn btn-primary active"
+                                                      {% else %}
+                                                        class="btn btn-primary"
+                                                        {% endif %}>Average</button></a>
+    <table class="table">
+        <thead>
+            <tr>
+                <td><strong>Site</strong></td>
+                <td><strong>A Value</strong>
+                </td><td><strong>B Value</strong></td>
+            </tr>
+        </thead>
+
+            {% for item in site_details %}
+            <tr>
+                <td>{{item.site_name}}</td>
+                <td>{{item.a_value__avg | floatformat:2}}</td>
+                <td>{{item.b_value__avg | floatformat:2}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+{% endblock %}

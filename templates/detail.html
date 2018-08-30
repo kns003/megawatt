@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+        <h1>Site Details - {{site_name}}</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><strong>Date</strong></td>
+                    <td><strong>A Value</strong></td>
+                    <td><strong>B Value</strong></td>
+                </tr>
+            </thead>
+            {% for item in site_details %}
+            <tr>
+                <td>{{item.created_at | date:"M d, Y"}}</td>
+                <td>{{item.a_value|floatformat:2}}</td>
+                <td>{{item.b_value|floatformat:2}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
