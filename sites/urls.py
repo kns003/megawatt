@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:site_id>/', views.detail, name='detail'),
-    path('summary/', views.summary, name='summary'),
-    path('summary-average/', views.summary_avarage, name='summary_average')
+    path('sites/<int:site_id>/', views.detail, name='detail'),
+    path('sites/summary/', views.summary, name='summary'),
+    path('sites/summary-average/', views.summary_avarage, name='summary_average')
 ]
